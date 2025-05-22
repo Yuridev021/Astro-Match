@@ -1,0 +1,24 @@
+1. Baixar o xampp daqui e instalar o xampp daqui: https://www.apachefriends.org/download.html
+
+2. Após terem instalado, va para o disco local aonde você instalou, entre na pasta xampp e dentro dela entre na pasta htdocs, aqui é aonde você coloca a pasta do site (print da pasta): https://prnt.sc/NnNUCSSdsFxS
+
+3. Agora abra o xampp e ligue o Apache e o MySQL.
+
+4. Depois de liga-los abra o navegador e entre nesse site: http://localhost/phpmyadmin/
+Caso ele não tenha carregado uma página confira se o Apache e o MySQL estão ligados no xampp
+
+5. Após entrarem no site, cliquem em SQL e execute esse comando: 
+CREATE DATABASE IF NOT EXISTS astro_match;
+USE astro_match;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+6. Agora é só acessar o site utilizando o link localhost/Astro-Match-main/index.html (altere o Astro-Match-main no link caso você mude o nome da pasta do site dentro do htdocs)
+
+7. Quando você criar uma conta no site, caso queiram conferir ou apaga-la depois basta voltar no localhost/phpmyadmin, apertar no astro_match na parte esquerda e depois ir na parte users, 
+print: https://prnt.sc/MiNHlFXHjGqy e nessa aba vai estar as informações do perfil registrado

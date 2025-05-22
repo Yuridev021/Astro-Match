@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/astro-match/src/styles/login.css">
+  <link rel="shortcut icon" href="../src/img/logo astro.png" type="image/x-icon"><link rel="shortcut icon" href="src/img/logo astro.png" type="image/x-icon">
+</head>
+<body class="body">
+  <div class="container">
+    <div class="astro">
+      <a href="../index.html">
+        <img id="logo" src="../src/img/logo.jpeg " alt="logo_astro_match">
+      </a>
+    </div>
+
+    <button id="temaBtn">🌙</button>
+    <div class="form-container">
+      <h1>Login:</h1>
+	  <form method="POST" action="../src/php/process_login.php">
+  <label for="usuario">Nome de Usuário ou E-mail:</label>
+  <input type="text" id="usuario" name="usuario" required>
+
+  <label for="senha">Senha:</label>
+  <input type="password" id="senha" name="senha" required>
+
+  <div class="manter-conectado">
+    <input type="checkbox" id="manterConectado" name="manterConectado">
+    <label for="manterConectado">Manter-se conectado</label>
+  </div>
+
+  <button id="botaomatch" type="submit">Entrar</button>
+</form>
+    </div>
+
+</div>
+<footer class="footer">
+  <p>&copy; 2025 AstroMatch. Todos os direitos reservados.</p>
+</footer>
+</body>
+
+<script>
+  // filepath: c:\Users\yurig\OneDrive\Área de Trabalho\astro-match-main\pages\login.html
+document.getElementById('temaBtn').addEventListener('click', function () {
+  document.body.classList.toggle('tema-claro');
+  this.textContent = document.body.classList.contains('tema-claro') ? '🌙' : '☀️';
+});
+
+</script>
+
+</html>

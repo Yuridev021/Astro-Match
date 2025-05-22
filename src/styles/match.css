@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    /* Estilo para o modo claro */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e003e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Impede a rolagem */
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+    .tinder {
+    position: relative;
+    width: 90vw;
+    max-width: 400px;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s;
+}
+
+    .tinder--cards {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+.tinder--card {
+    position: absolute;
+    width: 90%;
+    max-width: 350px;
+    height: 90%; /* Ajuste a altura para evitar ultrapassar os limites */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+    .tinder--card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+    .tinder--card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    }
+
+    .tinder--card p {
+    font-size: 1em;
+    color: #666;
+    }
+
+    .sign {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 10px;
+    }
+
+    .tinder--buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 10;
+    }
+
+    .tinder--buttons button {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+    }
+
+    .tinder--buttons button:hover {
+    background-color: #eee;
+    border-color: #999;
+    }
+
+    .hearts {
+    position: fixed;
+    top: 400px;
+    left: 48%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 5;
+    }
+
+    .heart {
+    position: absolute;
+    font-size: 5em;
+    color: red;
+    animation: floatUp 1s ease-out forwards;
+    opacity: 0;
+    }
+
+    @keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.5);
+        opacity: 0;
+    }
+    }
+
+    /* Estilo para o modo noturno */
+    body.night-mode {
+    background-color: #121212;
+    color: #fff;
+    }
+
+    body.night-mode .tinder {
+    background-color: #333;
+    }
+
+    body.night-mode .tinder--card {
+    background-color: #444;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    }
+
+    body.night-mode .tinder--card h3,
+    body.night-mode .tinder--card p,
+    body.night-mode .sign {
+    color: #fff;
+    }
+
+    body.night-mode .tinder--buttons button {
+    border-color: #444;
+    background-color: #333;
+    color: #fff;
+    }
+
+    body.night-mode .tinder--buttons button:hover {
+    background-color: #444;
+    }
+
+    /* Botão de modo noturno */
+    .night-mode-btn {
+    position: fixed;
+top: 20px;
+right: 20px; 
+background-color: #fff;
+color: #6a0dad;
+border: 2px solid #6a0dad;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+    }
+
+    .night-mode-btn:hover {
+    background-color: #6a0dad;
+    color: #fff;
+    }
+
+    /* Estilo do botão "Voltar ao Início" */
+    .scroll-to-top-btn {
+    background-color: #594161;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    }
+
+    .scroll-to-top-btn:hover {
+    background-color: #3a004f;
+    }
